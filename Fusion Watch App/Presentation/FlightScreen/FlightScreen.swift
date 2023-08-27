@@ -24,12 +24,7 @@ struct FlightScreen: View {
     var body: some View {
 
         VStack(alignment: .leading) {
-            BackButton()
-                .padding(.horizontal, 50)
-                    Space(height: 10)
-            ScrollView {
-                Descriptions(title: "Calculate flights")
-                                
+            ScrollView {                                
                 CircleView(
                     carbonValue: String(
                         flightVm.data.value?.carbonKg.rounded(toDecimalPlaces: 1) ?? Double(0.0)
@@ -179,7 +174,7 @@ struct FlightScreen: View {
         }
         .background(.black)
         .edgesIgnoringSafeArea(.bottom)
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(false)
 
         
     }

@@ -17,7 +17,7 @@ class SupbaseViewModel: ObservableObject {
     @Published var result: ResultState<[DataModel], String> = .idle
     @Published var delete: ResultState<String?, String> = .idle
     @Published var hasError : Bool = false
-    @Published var isDelete : Bool = false
+    @Published var isLoading : Bool = false
     @Published var errorMsg : String = ""
     @Published var carbonFTP : Double = 0.0
     
@@ -34,7 +34,9 @@ class SupbaseViewModel: ObservableObject {
   
     @MainActor
     func getTotal()async {
+        isLoading = true
         self.result = .loading
+       
         do {
             let result = try  await supaBaseRepo.getRequest(table: "Carbon")
            
@@ -47,30 +49,36 @@ class SupbaseViewModel: ObservableObject {
            
             self.result = .success(result ?? [])
             hasError = false
+            isLoading = false
+
             
         }
         catch{
             hasError = true
+            isLoading = false
             self.result = .failure(error.localizedDescription)
         }
     }
     
-    
+    @MainActor
     func delete(id: String)  {
+        isLoading = true
         self.delete = .loading
         Task {
             do{
               try await supaBaseRepo.delete(id: id)
                 self.delete = .success("Success")
+                isLoading = false
+               
             }
             catch {
                 hasError = true
+                isLoading = false
                 self.result = .failure(error.localizedDescription)
             }
         }
       
     }
-    
     
     func getChannel(){
         let user =  supaBaseRepo.realTime()
@@ -86,6 +94,7 @@ class SupbaseViewModel: ObservableObject {
             print(message.payload)
             Task{
                 await self.getTotal()
+               
             }
         }
         user.subscribe()

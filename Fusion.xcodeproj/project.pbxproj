@@ -18,6 +18,9 @@
 		0C19B52A2A96BBFE0049B6CA /* AppURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B5292A96BBFE0049B6CA /* AppURL.swift */; };
 		0C19B53E2A96BD990049B6CA /* HttpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B53D2A96BD990049B6CA /* HttpRepository.swift */; };
 		0C19B5412A96BDDD0049B6CA /* JsonMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C19B5402A96BDDD0049B6CA /* JsonMapper.swift */; };
+		0C346CCE2A9A0899001B784E /* Logistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C346CCD2A9A0899001B784E /* Logistics.swift */; };
+		0C346CD12A9A08CB001B784E /* LogisticsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C346CD02A9A08CB001B784E /* LogisticsVM.swift */; };
+		0C346CD32A9A137E001B784E /* TransportModeSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C346CD22A9A137E001B784E /* TransportModeSheet.swift */; };
 		0C439ACF2A97A1830078941C /* HistoryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C439ACE2A97A1830078941C /* HistoryScreen.swift */; };
 		0C5C68302A96C0E400B2B4D1 /* EnergyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C682F2A96C0E400B2B4D1 /* EnergyResponse.swift */; };
 		0C5C68322A96C10C00B2B4D1 /* EnergyReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5C68312A96C10C00B2B4D1 /* EnergyReq.swift */; };
@@ -42,7 +45,6 @@
 		0C855CCE2A993A3B0062F391 /* EnergyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C855CCD2A993A3B0062F391 /* EnergyViewModel.swift */; };
 		0C855CD02A993AD20062F391 /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C855CCF2A993AD20062F391 /* StateModel.swift */; };
 		0C855CD22A993B080062F391 /* IATAModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C855CD12A993B080062F391 /* IATAModel.swift */; };
-		0C855CD82A993BB50062F391 /* KeyBoardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C855CD72A993BB50062F391 /* KeyBoardHelper.swift */; };
 		0C855CDB2A993D920062F391 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C855CDA2A993D920062F391 /* SheetView.swift */; };
 		0C855CDD2A994B5D0062F391 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C855CDC2A994B5D0062F391 /* AppButton.swift */; };
 		0C855CDF2A994B890062F391 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C855CDE2A994B890062F391 /* CircleView.swift */; };
@@ -70,6 +72,9 @@
 		0C19B5292A96BBFE0049B6CA /* AppURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppURL.swift; sourceTree = "<group>"; };
 		0C19B53D2A96BD990049B6CA /* HttpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRepository.swift; sourceTree = "<group>"; };
 		0C19B5402A96BDDD0049B6CA /* JsonMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonMapper.swift; sourceTree = "<group>"; };
+		0C346CCD2A9A0899001B784E /* Logistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logistics.swift; sourceTree = "<group>"; };
+		0C346CD02A9A08CB001B784E /* LogisticsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogisticsVM.swift; sourceTree = "<group>"; };
+		0C346CD22A9A137E001B784E /* TransportModeSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportModeSheet.swift; sourceTree = "<group>"; };
 		0C439ACE2A97A1830078941C /* HistoryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryScreen.swift; sourceTree = "<group>"; };
 		0C5C682F2A96C0E400B2B4D1 /* EnergyResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyResponse.swift; sourceTree = "<group>"; };
 		0C5C68312A96C10C00B2B4D1 /* EnergyReq.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyReq.swift; sourceTree = "<group>"; };
@@ -94,7 +99,6 @@
 		0C855CCD2A993A3B0062F391 /* EnergyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyViewModel.swift; sourceTree = "<group>"; };
 		0C855CCF2A993AD20062F391 /* StateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
 		0C855CD12A993B080062F391 /* IATAModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IATAModel.swift; sourceTree = "<group>"; };
-		0C855CD72A993BB50062F391 /* KeyBoardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardHelper.swift; sourceTree = "<group>"; };
 		0C855CDA2A993D920062F391 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		0C855CDC2A994B5D0062F391 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		0C855CDE2A994B890062F391 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
@@ -247,6 +251,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		0C346CCF2A9A08B4001B784E /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				0C346CD02A9A08CB001B784E /* LogisticsVM.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
 		0C439ACD2A97A16D0078941C /* HistoryScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,7 +358,6 @@
 			children = (
 				0C5C68522A96CD4A00B2B4D1 /* Extensions.swift */,
 				0C5C68542A96CD8300B2B4D1 /* Fonts.swift */,
-				0C855CD72A993BB50062F391 /* KeyBoardHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -409,6 +420,9 @@
 		0C855CEB2A997B1E0062F391 /* LogisticScreen */ = {
 			isa = PBXGroup;
 			children = (
+				0C346CCF2A9A08B4001B784E /* VM */,
+				0C346CCD2A9A0899001B784E /* Logistics.swift */,
+				0C346CD22A9A137E001B784E /* TransportModeSheet.swift */,
 			);
 			path = LogisticScreen;
 			sourceTree = "<group>";
@@ -507,11 +521,11 @@
 				0C855CE32A994BD70062F391 /* BackButton.swift in Sources */,
 				0C855CDF2A994B890062F391 /* CircleView.swift in Sources */,
 				0C19B51E2A96BA780049B6CA /* ServiceContainer.swift in Sources */,
+				0C346CCE2A9A0899001B784E /* Logistics.swift in Sources */,
 				0C19B5202A96BA990049B6CA /* Service.swift in Sources */,
 				0C5C68352A96C16D00B2B4D1 /* LogisticsResponse.swift in Sources */,
 				0C439ACF2A97A1830078941C /* HistoryScreen.swift in Sources */,
 				0C19B52A2A96BBFE0049B6CA /* AppURL.swift in Sources */,
-				0C855CD82A993BB50062F391 /* KeyBoardHelper.swift in Sources */,
 				0C855CD02A993AD20062F391 /* StateModel.swift in Sources */,
 				0C19B5112A96BA320049B6CA /* ContentView.swift in Sources */,
 				0C855CCE2A993A3B0062F391 /* EnergyViewModel.swift in Sources */,
@@ -529,6 +543,7 @@
 				0C855CEE2A997B510062F391 /* FlightScreen.swift in Sources */,
 				0C19B5242A96BB7B0049B6CA /* Error.swift in Sources */,
 				0C855CDD2A994B5D0062F391 /* AppButton.swift in Sources */,
+				0C346CD12A9A08CB001B784E /* LogisticsVM.swift in Sources */,
 				0C5C683A2A96C1FC00B2B4D1 /* FlightResponse.swift in Sources */,
 				0C5C68502A96CB7C00B2B4D1 /* ResultState.swift in Sources */,
 				0C855CC42A98BF930062F391 /* RouterView.swift in Sources */,
@@ -536,6 +551,7 @@
 				0C855CE12A994BB70062F391 /* Description.swift in Sources */,
 				0C5C68532A96CD4A00B2B4D1 /* Extensions.swift in Sources */,
 				0C19B5272A96BBA20049B6CA /* NetworkService.swift in Sources */,
+				0C346CD32A9A137E001B784E /* TransportModeSheet.swift in Sources */,
 				0C5C68372A96C1AE00B2B4D1 /* LogisticsReq.swift in Sources */,
 				0C5C68302A96C0E400B2B4D1 /* EnergyResponse.swift in Sources */,
 				0C855CF02A997B630062F391 /* FlightVM.swift in Sources */,

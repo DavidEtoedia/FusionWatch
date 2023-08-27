@@ -13,11 +13,13 @@ struct ChatScreen: View {
     
     let list : [DataModel]
     @State private var enteredText = ""
+    @EnvironmentObject var router: Router<Path>
+
     
     var body: some View {
         VStack {
             Descriptions(title: "Carbon Chart")
-            //Space(height: UIScreen.main.bounds.height / 5)
+
             Chart {
                 ForEach(list) { list in
                     BarMark(x: .value("Month", list.name), y: .value("values", list.carbonKg))
@@ -40,7 +42,7 @@ struct ChatScreen: View {
             .chartYAxis {
                 AxisMarks(values: .automatic) { value in
                     AxisGridLine(centered: true, stroke: StrokeStyle(dash: [1, 2]))
-                        .foregroundStyle(Color.cyan)
+                        .foregroundStyle(Color.cyan.opacity(0.3))
                       AxisTick(centered: true, stroke: StrokeStyle(lineWidth: 2))
                         .foregroundStyle(Color.red)
                 AxisValueLabel() { // construct Text here

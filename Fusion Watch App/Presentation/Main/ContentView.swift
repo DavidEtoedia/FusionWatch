@@ -52,13 +52,6 @@ struct MainAppView: View {
         startAngle: .degrees(180),
         endAngle: .degrees(0))
 
-
-//    private let gradient2 = AngularGradient(
-//        gradient: Gradient(colors: [Color.purple, Color.blue]),
-//        center: .center,
-//        startAngle: .degrees(180),
-//        endAngle: .degrees(0))
-    
     var degree: CGFloat = 0
     var ringValue: CGFloat {
         currentTemperature / 50
@@ -93,10 +86,7 @@ struct MainAppView: View {
                     
                     Circle()
                         .trim( from: 0, to:
-//                                    CGFloat( (supabaseVM.carbonFTP ?? 0.0) / 100 )
-
                                self.borderanim1
-
                         )
                         .stroke(gradient, style: StrokeStyle(lineWidth: 10, lineCap: .round))
                         .frame(width: 120, height: 120, alignment: .center)
@@ -134,10 +124,7 @@ struct MainAppView: View {
             .frame(width: 100, height: 100)
             .padding(.horizontal)
             .padding(.bottom, 30)
-            
-            
-        
-            
+
             Text("View History")
                 .font(.system(size:12))
                 .foregroundColor(.blue)
@@ -157,18 +144,11 @@ struct MainAppView: View {
                 .onTapGesture {
                     router.push(.FlightScreen, value: nil)
                 }
-           
-
-       
-
-//            NavigationLink {
-//               // Ship_screen()
-//            } label: {
-//                CarbonCard(name: "logistics", value: String(  supabaseVM.logistics?.carbonKg.rounded(toDecimalPlaces: 1) ?? 0.0), image: "ship", isLoading: supabaseVM.result.isLoading)
-//            }
-//            .accentColor(.clear)
-//            .accessibilityIdentifier("logistics")
-
+            
+            CarbonCard(name: "logistics", value:String(  supabaseVM.logistics?.carbonKg.rounded(toDecimalPlaces: 1) ?? 0.0), image: "ship", isLoading: supabaseVM.result.isLoading)
+                .onTapGesture {
+                    router.push(.LogisticsScreen, value: nil)
+                }
                 
         }
         .padding(.horizontal, 10)
@@ -180,10 +160,9 @@ struct MainAppView: View {
             Text("An Error occured")
         })
         .onAppear{
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                 withAnimation {
-                    self.borderanim1 =
-                    CGFloat( (supabaseVM.carbonFTP) / 100)
+                   borderanim1 = (supabaseVM.carbonFTP) / 100
                 }
             }
        

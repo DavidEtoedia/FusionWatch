@@ -1,35 +1,26 @@
 //
-//  SheetView.swift
-//  Carbon_Fusion
+//  TransportModeSheet.swift
+//  Fusion Watch App
 //
-//  Created by Inyene Etoedia on 15/07/2023.
+//  Created by Inyene Etoedia on 26/08/2023.
 //
 
 import SwiftUI
 
-struct DestinationSheet: View {
+struct TransportModeSheet: View {
     @Binding var isSheetPresent: Bool
-    @Binding var selectedCode: IATAModel
-
-     var iata: [IATAModel] = IATAModel.allCode
+    @Binding var selectedMethod: String
     @State private var searchText = ""
-    var  filterState : [IATAModel] {
-        if(searchText.isEmpty){
-            return iata
-        } else {
-            return iata.filter {$0.name.lowercased().contains(searchText.lowercased())}
-        }
-    }
+     var methods: [String] = ["truck", "ship", "train", "plane"]
     var body: some View {
         VStack {
-            Space(height: 10)
-            SearchBar(searchText: $searchText)
+
             Space(height: 20)
             ScrollView {
-                ForEach(filterState, id: \.code) { value in
+                ForEach(methods, id: \.self) { value in
                    
-                    Text(value.name)
-                        .font(.system(size: 10))
+                    Text(value)
+                        .font(.system(size: 12))
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding()
@@ -39,14 +30,13 @@ struct DestinationSheet: View {
                         .padding(.vertical, 1)
                         .onTapGesture {
                             isSheetPresent = false
-                            selectedCode = value
+                            selectedMethod = value
                         }
                       
                 }
                 .frame(maxWidth: .infinity)
             
             }
-      
        
         }
         .padding(.horizontal, 20)
@@ -56,10 +46,9 @@ struct DestinationSheet: View {
     }
 }
 
-struct DestinationSheet_Previews: PreviewProvider {
+
+struct TransportModeSheet_Previews: PreviewProvider {
     static var previews: some View {
-        DestinationSheet(isSheetPresent: .constant(false), selectedCode: .constant(IATAModel()))
+        TransportModeSheet(isSheetPresent: .constant(true), selectedMethod: .constant("truck"))
     }
 }
-
-

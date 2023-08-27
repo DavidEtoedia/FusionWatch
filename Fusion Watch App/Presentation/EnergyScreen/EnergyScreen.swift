@@ -26,15 +26,7 @@ struct EnergyScreen: View {
     var ringValue: CGFloat = 1
     var body: some View {
         VStack(alignment: .leading) {
-            BackButton()
-                .padding(.horizontal, 20)
-            
-            Space(height: 10)
             ScrollView {
-                Descriptions(title: "Calculate Electricity Consumption")
-              
-                Space(height: 5)
-                
                 CircleView(
                     carbonValue: String(
                         energyVm.data.value?.carbonKg.rounded(toDecimalPlaces: 1) ?? Double(0.0)
@@ -127,7 +119,7 @@ struct EnergyScreen: View {
         }
         .background(.black)
         .edgesIgnoringSafeArea(.bottom)
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(false)
     }
 }
 

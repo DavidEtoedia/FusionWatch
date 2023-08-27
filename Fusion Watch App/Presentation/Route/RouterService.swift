@@ -21,6 +21,15 @@ final class Router<T: Hashable>: ObservableObject {
          paths.append(path)
          values[path] = value
      }
+    
+    func popUntil(predicate: (T) -> Bool) {
+        if let last = paths.popLast() {
+            guard predicate(last) else {
+                popUntil(predicate: predicate)
+                return
+            }
+        }
+    }
 
     func pop() {
         paths.removeLast()
@@ -41,4 +50,5 @@ enum Path {
     case EnergyScreen
     case chartScreen
     case FlightScreen
+    case LogisticsScreen
 }

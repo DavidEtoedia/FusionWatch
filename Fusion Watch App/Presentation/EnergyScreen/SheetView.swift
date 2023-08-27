@@ -22,22 +22,6 @@ struct SheetView: View {
     var body: some View {
         VStack {
             Space(height: 10)
-            Circle()
-                .frame(width: 20, height: 20)
-                .foregroundColor(.gray.opacity(0.3))
-                .overlay {
-                    Image(systemName: "xmark")
-                        .resizable()
-                        .frame(width: 10, height: 10)
-                        .foregroundColor(.white)
-                       
-                }
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .onTapGesture {
-                    isSheetPresent = false
-                }
-     
-            Space(height: 10)
             SearchBar(searchText: $searchText)
             Space(height: 20)
             ScrollView {

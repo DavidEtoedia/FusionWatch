@@ -14,6 +14,7 @@ struct HistoryScreen: View {
     //MARK: Navigation Path
     @State private var isSelected: Bool = false
     @State private var showAlert: Bool = false
+    @State private var isloading: Bool = false
     @State private var selectedid: String = ""
     let list : [DataModel]
     var body: some View {
@@ -30,19 +31,21 @@ struct HistoryScreen: View {
                     .onTapGesture {
                         router.push(.chartScreen, value: list)
                     }
-         
+                
             }
             
-            ScrollView(showsIndicators: false) {
-                ForEach(list) { value in
-                    
-                    CarbonHistory(value: value) {
-                        if(supaBaseVm.delete.isLoading && value.id.description == selectedid){
-                            ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                                .padding(.vertical, 10)
-                        }
-                        else{
+            if(supaBaseVm.result.isLoading && supaBaseVm.delete.isLoading){
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                    .scaleEffect(1)
+                    .padding(.vertical, 10)
+            }
+            else{
+                ScrollView(showsIndicators: false) {
+                    ForEach(supaBaseVm.result.value ?? [], id: \.id) { value in
+                        
+                        CarbonHistory(value: value) {
+                            
                             Rectangle()
                                 .frame(width: 25, height: 35)
                                 .foregroundColor(.gray.opacity(0.2))
@@ -57,20 +60,26 @@ struct HistoryScreen: View {
                                 }
                             
                         }
+                        
                     }
-
+                    
                 }
-              
+                .alert("Loading", isPresented: $supaBaseVm.isLoading) {
+                    
+                }
+                
+                
             }
-          
+            
         }
         .alert("Delete Alert", isPresented: $showAlert, actions: {
             HStack {
-              
+                
                 Button(role: .none, action: {
                     showAlert = false
+                    isloading = true
                     supaBaseVm.delete(id: selectedid.lowercased())
-                  
+                    
                 }, label: {
                     Text("Delete")
                         .foregroundColor(.red)
@@ -78,9 +87,10 @@ struct HistoryScreen: View {
                 Button("Cancel", role: .cancel){}
             }
         })
+        
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .edgesIgnoringSafeArea(.bottom)
-    .background(.black)
+        .background(.black)
     }
     
     
@@ -138,3 +148,7 @@ struct CarbonHistory<Content: View>: View {
         }
     }
 }
+
+
+
+

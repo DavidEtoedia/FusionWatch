@@ -16,6 +16,7 @@ struct Home: View {
             case .MainScreen: MainAppView()
             case.EnergyScreen: EnergyScreen()
             case.FlightScreen: FlightScreen()
+            case.LogisticsScreen: LogisticScreen()
             case.chartScreen: ChatScreen(list: val as! [DataModel])
             case .HistoryScreen: HistoryScreen(list: val as! [DataModel])
                 

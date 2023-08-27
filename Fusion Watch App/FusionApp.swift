@@ -18,6 +18,7 @@ struct Fusion_Watch_AppApp: App {
                 .environmentObject(SupbaseViewModel())
                 .environmentObject(EnergyViewModel())
                 .environmentObject(FlightViewModel())
+                .environmentObject(ShipViewModel())
         }
     }
 }
