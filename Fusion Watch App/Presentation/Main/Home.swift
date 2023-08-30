@@ -17,11 +17,8 @@ struct Home: View {
             case.EnergyScreen: EnergyScreen()
             case.FlightScreen: FlightScreen()
             case.LogisticsScreen: LogisticScreen()
-            case.chartScreen: ChatScreen(list: val as! [DataModel])
+            case.chartScreen: ChatScreen(list: val as? [DataModel] ?? [])
             case .HistoryScreen: HistoryScreen(list: val as! [DataModel])
-                
-
-                
             }
         }
     }
@@ -30,8 +27,11 @@ struct Home: View {
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
-          .environmentObject(Router<Path>(root: .MainScreen))
-        
+         .environmentObject(SupbaseViewModel())
+         .environmentObject(EnergyViewModel())
+         .environmentObject(FlightViewModel())
+         .environmentObject(ShipViewModel())
+         .environmentObject(Router(root: Path.MainScreen))
     }
 }
 

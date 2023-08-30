@@ -17,7 +17,7 @@ final class Router<T: Hashable>: ObservableObject {
         self.root = root
     }
 
-    func push(_ path: T, value: Any?) {
+    func push(_ path: T, value: Any? = nil) {
          paths.append(path)
          values[path] = value
      }

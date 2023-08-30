@@ -18,8 +18,26 @@ struct ChatScreen: View {
     
     var body: some View {
         VStack {
-            Descriptions(title: "Carbon Chart")
-
+            Space(height: 40)
+                HStack {
+                    Image(systemName: "house.fill")
+                        .resizable()
+                    .frame(width: 11, height: 11)
+                    .foregroundColor(.blue)
+                    Text("Home")
+                    .font(.system(size: 12))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.blue)
+                }
+                .frame(maxWidth: .infinity, alignment:.leading)
+                .onTapGesture {
+                    router.popToRoot()
+                    
+                }
+        
+            
+            Space(height: 20)
+ 
             Chart {
                 ForEach(list) { list in
                     BarMark(x: .value("Month", list.name), y: .value("values", list.carbonKg))
@@ -54,7 +72,7 @@ struct ChatScreen: View {
                 }
               }
             }
-            .frame(height:180)
+            .frame(height:150)
             
               Text(enteredText)
                 .foregroundColor(.white)
@@ -62,6 +80,7 @@ struct ChatScreen: View {
         
         
         }
+      
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .padding()
         .background(.black)

@@ -22,7 +22,6 @@ struct MainAppView: View {
     @EnvironmentObject private var supabaseVM: SupbaseViewModel
     
     // MARK: Navigation path
-    @State private var path = NavigationPath()
 
     // States
     private let outerDialSize: CGFloat = 200
@@ -142,7 +141,7 @@ struct MainAppView: View {
             
             CarbonCard(name: "Flights", value:String(  supabaseVM.flight?.carbonKg.rounded(toDecimalPlaces: 1) ?? 0.0), image: "plane", isLoading: supabaseVM.result.isLoading)
                 .onTapGesture {
-                    router.push(.FlightScreen, value: nil)
+                    router.push(.FlightScreen)
                 }
             
             CarbonCard(name: "logistics", value:String(  supabaseVM.logistics?.carbonKg.rounded(toDecimalPlaces: 1) ?? 0.0), image: "ship", isLoading: supabaseVM.result.isLoading)
